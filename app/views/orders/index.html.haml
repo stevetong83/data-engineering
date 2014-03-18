@@ -1,0 +1,11 @@
+%h1 All Orders
+
+%table
+  %tr
+    %th Purchaser Name
+    %th Item Description
+
+
+  - @orders.each do |order|
+    %tr
+      %td= order.purchaser_name
