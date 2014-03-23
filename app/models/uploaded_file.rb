@@ -12,6 +12,10 @@ class UploadedFile < ActiveRecord::Base
     %w(tab)
   end
 
+  def gross_revenue
+     self.orders.inject(0){|sum, order| sum + (order.item.price * order.purchase_count)}
+  end
+
   private
 
   def normalize_data

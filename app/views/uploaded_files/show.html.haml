@@ -20,4 +20,4 @@
 
 %br
 %br
-%strong= "#{@uploaded_file.file_identifier} Gross Revenue"
+%strong= "#{@uploaded_file.file_identifier} Gross Revenue: #{number_to_currency(@uploaded_file.gross_revenue, unit: '$')}"
