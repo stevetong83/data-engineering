@@ -2,8 +2,9 @@
 
 * Ruby 2.0.0
 * Rails 4.0.2
+* SQLite 3
 
-= Set up
+=== Set up
 
 1. git clone
 2. bundle
@@ -11,7 +12,7 @@
 4. rails s
 5. http://localhost:3000
 
-= Test Suite: RSPEC
+=== Test Suite: RSPEC
 
 1. rake db:test:prepare
 2. rspec spec

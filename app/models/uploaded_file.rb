@@ -34,7 +34,6 @@ class UploadedFile < ActiveRecord::Base
       item = Item.where(description: item_description, price: item_price).first_or_create
       Order.create(purchaser: purchaser, item: item, merchant: merchant, purchase_count: purchase_count, uploaded_file: self)
     end
-
   end
 
 end
