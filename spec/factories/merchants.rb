@@ -1,8 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :file_order do
+  factory :merchant do
     name "MyString"
-    file "MyString"
+    address "MyText"
   end
 end

@@ -11,27 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318190615) do
+ActiveRecord::Schema.define(version: 20140323204852) do
 
-  create_table "file_orders", force: true do |t|
+  create_table "items", force: true do |t|
+    t.string   "description"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "merchants", force: true do |t|
     t.string   "name"
-    t.string   "file"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "orders", force: true do |t|
-    t.string   "purchaser_name"
-    t.integer  "file_id"
-    t.text     "item_description"
-    t.decimal  "item_price"
+    t.integer  "uploaded_file_id"
+    t.integer  "merchant_id"
+    t.integer  "item_id"
+    t.integer  "purchaser_id"
     t.integer  "purchase_count"
-    t.string   "merchant_address"
-    t.string   "merchant_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "orders", ["file_id"], name: "index_orders_on_file_id"
+  add_index "orders", ["item_id"], name: "index_orders_on_item_id"
+  add_index "orders", ["merchant_id"], name: "index_orders_on_merchant_id"
+  add_index "orders", ["purchaser_id"], name: "index_orders_on_purchaser_id"
+  add_index "orders", ["uploaded_file_id"], name: "index_orders_on_uploaded_file_id"
+
+  create_table "purchasers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "uploaded_files", force: true do |t|
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

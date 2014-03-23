@@ -1,0 +1,23 @@
+%h1= "#{@uploaded_file.file_identifier} orders"
+
+%table
+  %tr
+    %th Purchaser Name
+    %th Item Description
+    %th Item Price
+    %th Purchase Count
+    %th Merchant Address
+    %th Merchant Name
+  
+  - @orders.each do |order|
+    %tr
+      %td= order.purchaser.name
+      %td= order.item.description
+      %td= number_to_currency(order.item.price, unit: "$")
+      %td= order.purchase_count
+      %td= order.merchant.address
+      %td= order.merchant.name
+
+%br
+%br
+%strong= "#{@uploaded_file.file_identifier} Gross Revenue"

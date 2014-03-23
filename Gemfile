@@ -14,6 +14,8 @@ gem 'haml'
 
 gem 'simple_form'
 
+gem 'carrierwave'
+
 gem 'jbuilder', '~> 1.2'
 
 group :test do

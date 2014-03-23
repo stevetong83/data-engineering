@@ -1,8 +1,8 @@
 DataEngineering::Application.routes.draw do
 
-  root 'file_orders#index'
+  root 'uploaded_files#index'
 
-  resources :file_orders
+  resources :uploaded_files
   resources :orders
   
 end
